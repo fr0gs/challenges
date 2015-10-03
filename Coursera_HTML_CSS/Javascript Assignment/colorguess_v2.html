@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title>My humble Color Guessing Game</title>
+</head>
+<body onload="do_game()">
+  <script type="text/javascript">
+		//Number of guesses.
+		guesses = 0;
+
+    //Array of potential colors.
+    colors = ["coral", "orange", "goldenrod", "lime", "moccasin", "darkviolet", "navy", "orchid"].sort();
+
+    //Random number between 0 and array length.
+    random = Math.floor(Math.random()*(colors.length + 1));
+
+		//Controls input.
+		function check_guess(color, target) {
+			var ret = false;
+
+			if (colors.indexOf(color) == -1) {
+				alert("I don't recognize that color!");
+			}
+			else if (color > target) {
+				alert("Your input is alphabetically higher than mine!");
+			}
+			else if (color < target) {
+				alert("Your input is alphabetically lower than mine!");
+			}
+			//Can only be when color == target.
+			else {
+				myBody = document.getElementsByTagName("body")[0];
+				myBody.style.background = color;
+				alert("You are right! it took you " + guesses + " guesses!");
+				ret = true;
+			}
+			return ret;
+		}
+
+		//Game Logic.
+    function do_game() {
+      var target = colors[random];
+      var finished = false;
+      alert(target);
+
+      while (!finished) {
+				guesses++;
+        var colorguess = prompt("This are the available colors: \n" + colors +
+                      "\n\n" + "Guess the color amigo!");
+        finished = check_guess(colorguess, target);
+      }
+    }
+
+
+  </script>
+</body>
+</html>
