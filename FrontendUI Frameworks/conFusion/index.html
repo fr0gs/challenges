@@ -3,15 +3,95 @@
 <html lang="en"><head>
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Ristorante Con Fusion</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-    <!-- Own CSS file -->
-    <link href="css/mystyles.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/bootstrap-social.css" rel="stylesheet">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <!-- Own CSS file -->
+  <!-- <link href="css/mystyles.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="css/bootstrap-social.css" rel="stylesheet">
+
+  <title>Ristorante Con Fusion</title>
+
+<style type="text/css">
+    .row-header {
+      margin:0px auto;
+      padding:0px auto;
+    }
+
+    .row-content {
+      margin:0px auto;
+      padding: 50px 0px 50px 0px;
+      border-bottom: 1px ridge;
+      min-height: 400px;
+    }
+
+    .row-footer {
+      background-color: #AFAFAF;
+      margin:0px auto;
+      padding: 20px 0px 20px 0px;
+    }
+
+    .jumbotron {
+      padding: 70px 30px 70px 30px;
+      margin: 0px auto;
+      background: #7986CB;
+      color: floralwhite;
+    }
+
+    .top-content {
+      margin-bottom: 250px;
+    }
+
+    address {
+      font-size: 80%;
+      margin: 0px;
+      color: #0F0F0F;
+    }
+
+    body {
+      align: center;
+      padding: 50px 0px 0px 0px;
+      z-index: 0;
+    }
+
+    li {
+      cursor: pointer;
+      cursor: hand;
+    }
+
+    .navbar-inverse {
+      background: #303F9F;
+    }
+
+    .navbar-inverse .navbar-nav > .active > a,
+    .navbar-inverse .navbar-nav > .active > a:hover,
+    .navbar-inverse .navbar-nav > .active > a:focus {
+      color: #FFF;
+      background: #1A237E;
+    }
+
+
+    .navbar-inverse .navbar-nav > .open > a,
+     .navbar-inverse .navbar-nav > .open > a:hover,
+     .navbar-inverse .navbar-nav > .open > a:focus {
+        color: #fff;
+        background: #1A237E;
+    }
+
+    .navbar-inverse .navbar-nav .open .dropdown-menu> li> a,
+    .navbar-inverse .navbar-nav .open .dropdown-menu {
+        background-color: #303F9F;
+        color:#eeeeee;
+    }
+
+    .navbar-inverse .navbar-nav .open .dropdown-menu> li> a:hover {
+        color:#000000;
+    }
+    </style>
 </head>
 
 <body>
@@ -42,12 +122,12 @@
             </li>
             <li>
               <a href="about.html">
-                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>About
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> About
               </a>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="menu-link">
-                Menu <span class="caret"></span>
+                <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Menu <span class="caret"></span>
               </a>
               <!-- Menu link is turned into a dropdown menu -->
               <ul class="dropdown-menu">
@@ -62,7 +142,11 @@
                 <li><a href="#">Weekend</a></li>
               </ul>
             </li>
-            <li><a href="#" id="contact-link">Contact</a></li>
+            <li>
+              <a href="contactus.html">
+                <i class="fa fa-envelope-o"></i> Contact
+              </a>
+            </li>
           </ul>
         </div>
       </div>
