@@ -1,19 +1,43 @@
+html, body {
+  height: 100%;
+}
+
+.beauty-heading {
+  font-family: 'Nunito', sans-serif;
+  color: #FFFACD;
+}
+
 .row-header {
-  margin:0px auto;
-  padding:0px auto;
+  margin: 0px auto;
+  padding: 0px auto;
 }
 
 .row-content {
-  margin:0px auto;
-  padding: 50px 0px 50px 0px;
-  border-bottom: 1px ridge;
-  min-height: 400px;
+   min-height: 400px;
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
 }
 
 .row-footer {
   background-color: #AFAFAF;
-  margin:0px auto;
+  margin: 0px auto;
   padding: 20px 0px 20px 0px;
+}
+
+.introduction-row {
+  height: 650px;
+  padding-top: 15%;
+  /*padding-bottom: 50px;*/
+  text-align: center;
+  vertical-align: bottom;
+  background: url('../img/wood.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.navbar {
+  margin-bottom: 0px;
 }
 
 #navbar > ul > li > a {
@@ -32,4 +56,28 @@
 
 #brand-text {
   color: #FFF;
+}
+
+* {
+  margin: 0px;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+
+.push {
+  height: 4em;
+}
+
+/* Personalized div hr separator*/
+.custom-hr {
+  background: #fff  no-repeat scroll center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50em;
+  height: 2px;
 }
