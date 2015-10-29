@@ -12,6 +12,7 @@
   <!-- Own CSS file -->
   <!-- <link href="css/mystyles.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
   <link href="css/bootstrap-social.css" rel="stylesheet">
 
   <title>Ristorante Con Fusion</title>
@@ -109,7 +110,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Ristorante Con Fusion</a>
+          <a class="navbar-brand" href="#"><img src="img/logo.png" height=30 width=41></a>
         </div>
 
         <!-- Navbar of the links -->
@@ -148,8 +149,22 @@
               </a>
             </li>
           </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Email">
+              <input type="password" class="form-control" placeholder="Password">
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="">
+                <font color="white"> Remember me </font>
+              </label>
+            </div>
+            <button type="submit" class="btn btn-info">Sign In</button>
+          </form>
         </div>
       </div>
+
     </nav>
 
     <header class="jumbotron">
@@ -165,7 +180,13 @@
                     <p style="padding:40px;"></p>
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                 </div>
-                <div class="col-xs-12 col-sm-4">
+                <div class="col-xs-12 col-sm-2">
+                    <p style="padding:20px;"></p>
+                    <img src="img/logo.png" class="img-responsive">
+                </div>
+                <div class="col-xs-12 col-sm-2">
+                    <p style="padding:50px;"></p>
+                    <a class="btn btn-warning btn-block" href="#reserve_table">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -189,9 +210,25 @@
                 <h3 align="center">Our Lipsmacking Culinary Creations</h3>
             </div>
             <div class="col-xs-12 col-sm-9 col-sm-pull-3">
-                <h2>Uthappizza</h2>
-                <p>A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
-                <p><a href="https://d396qusza40orc.cloudfront.net/phoenixassets/web-frameworks/index.html#">More »</a></p>
+              <div class="media">
+                      <div class="media-left media-middle">
+                          <a href="#">
+                          <img class="media-object img-thumbnail"
+                           src="img/uthappizza.png" alt="Uthappizza">
+                          </a>
+                      </div>
+                      <div class="media-body">
+                          <h2 class="media-heading">Uthappizza
+                            <span class="label label-danger label-xs">Hot</span>
+                             <span class="badge">$4.99</span>
+                          </h2>
+                          <p>A unique combination of Indian Uthappam (pancake) and
+                            Italian pizza, topped with Cerignola olives, ripe vine
+                            cherry tomatoes, Vidalia onion, Guntur chillies and
+                            Buffalo Paneer.</p>
+                          <p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>
+                      </div>
+              </div>
             </div>
         </div>
 
@@ -201,11 +238,27 @@
                 <p style="padding:20px;"></p>
                 <h3 align="center">This Month's Promotions</h3>
             </div>
-            <div class="col-xs-12 col-sm-9">
-                <h2>Weekend Grand Buffet</h2>
-                <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
-                <p><a href="https://d396qusza40orc.cloudfront.net/phoenixassets/web-frameworks/index.html#">More »</a></p>
+
+            <div class="media">
+              <div class="media-body">
+                <h2 class="media-heading">Weekend Grand Buffet
+                  <span class="label label-danger label-xs">New</span>
+                </h2>
+                <p>
+                Featuring mouthwatering combinations with a choice of five different salads,
+                six enticing appetizers, six main entrees and five choicest desserts. Free flowing
+                bubbly and soft drinks. All for just $19.99 per person.
+                </p>
+                <p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>
+              </div>
+              <div class="media-right media-middle">
+                <a href="#">
+                  <img class="media-object img-thumbnail"
+                  src="img/buffet.png" alt="Buffet">
+                </a>
+              </div>
             </div>
+
         </div>
 
         <div class="row row-content">
@@ -214,12 +267,89 @@
                 <h3 align="center">Meet our Culinary Specialists</h3>
             </div>
             <div class="col-xs-12 col-sm-9 col-sm-pull-3">
-                <h2>Alberto Somayya</h2>
-                <h4>Executive Chef</h4>
-                <p>Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
-                <p><a href="https://d396qusza40orc.cloudfront.net/phoenixassets/web-frameworks/index.html#">More »</a></p>
+              <div class="media">
+                  <div class="media-left media-middle">
+                      <a href="#">
+                      <img class="media-object img-thumbnail"
+                       src="img/alberto.png" alt="Alberto Somayya">
+                      </a>
+                  </div>
+                  <div class="media-body">
+                      <h2 class="media-heading">Alberto Somayya</h2>
+                      <h4>Executive Chef</h4>
+                      <p>Award winning three-star Michelin chef with wide
+                       International experience having worked closely with
+                       whos-who in the culinary world, he specializes in
+                        creating mouthwatering Indo-Italian fusion experiences.
+                       </p>
+                      <p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>
+                  </div>
+              </div>
             </div>
         </div>
+
+
+
+        <div class="row row-content" id="reserve_table">
+            <div class="col-xs-12 col-sm-3">
+                <p style="padding:20px;"></p>
+                <h3 align="center">Reserve a Table</h3>
+            </div>
+
+            <div class="col-xs-12 col-sm-9">
+
+              <form class="form-horizontal" role="form">
+                <div class="form-group">
+                  <div class="col-xs-12 col-sm-2">
+                    <label for="guests" class="control-label">Number of guests</label>
+                  </div>
+                  <div class="col-xs-12 col-sm-10">
+                    <div class="radio">
+                      <label><input type="radio" name="one">1</label>
+                      <label><input type="radio" name="two">2</label>
+                      <label><input type="radio" name="three">3</label>
+                      <label><input type="radio" name="four">4</label>
+                      <label><input type="radio" name="five">5</label>
+                      <label><input type="radio" name="six">6</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group has-feedback">
+                  <div class="col-xs-12 col-sm-2">
+                    <label for="date_time" class="control-label">Date and Time</label>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-3">
+                    <input type="text" class="form-control" placeholder="Date" />
+                    <i class="glyphicon glyphicon-calendar form-control-feedback"></i>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-3 col-sm-offset-1 has-feedback">
+                    <input type="text" class="form-control" placeholder="Time" />
+                    <i class="glyphicon glyphicon-time form-control-feedback"></i>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-xs-12 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+                    <button type="button" class="btn btn-primary btn-sm">Reserve</button>
+                  </div>
+                </div>
+
+                <div class="alert alert-warning">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <p>
+                    <strong>Warning!</strong> please <a href="tel:+852 1234 5678" class="alert-link"> call</a> us to reserve more than six guests
+                  </p>
+                </div>
+            </form>
+          </div>
+      </div>
+
+
+
+
     </div>
 
     <footer class="row-footer">
@@ -279,7 +409,7 @@
     <!-- Include all compiled plugins (below), orinclude individual files as needed -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 </body></html>
