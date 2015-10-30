@@ -81,100 +81,59 @@
         </div>
       </nav>
 
-        <!-- FIRST SECTION, INTRODUCTION AND SOCIAL MEDIA (HOME)-->
+      <!--
+        FIRST SECTION, INTRODUCTION AND SOCIAL MEDIA(HOME)
+        The trick so I kept having that nasty f*cking padding
+        above the row was because I was nesting first container-fluid
+        and then inside it the first-header. In order to make it work
+        it has to be a l'envers. Remember it Esteban.
+      -->
+      <div class="first-header">
         <div class="container-fluid">
           <div class="row" id="home">
-            <div class="simple-row home-row">
-              <div class="col-xs-12 col-sm-12 col-md-12">
-                <h1 class="beauty-heading">Full Stack Development</h1>
-                <h3 class="small-beauty-heading">Ready to take care of your projects!</h3>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <!-- Big header -->
+              <h1 class="beauty-heading">
+                <span class="label label-primary">Full Stack Development</span>
+              </h1>
+              <!-- Small header-->
+              <h3 class="small-beauty-heading">
+                <span class="label label-info">Ready to take care of your projects!</span>
+              </h3>
 
-                <div class="custom-hr">
-                    <hr>
-                </div>
-
-                <br>
-
-                <ul class="list-inline">
-                    <li>
-                      <a class="btn btn-default btn-lg hvr-pulse" href="https://twitter.com/fro_g" role="button">
-                        <i class="fa fa-twitter-square"></i> Twitter
-                      </a>
-                    </li>
-                    <li>
-                      <a class="btn btn-default btn-lg hvr-pulse" href="https://github.com/fr0gs" role="button">
-                        <i class="fa fa-github"></i> Github
-                      </a>
-                    </li>
-                    <li>
-                      <a class="btn btn-default btn-lg hvr-pulse" href="https://es.linkedin.com/in/estebansastre" role="button">
-                        <i class="fa fa-linkedin"></i> Linkedin
-                      </a>
-                    </li>
-                    <li>
-                      <a class="btn btn-default btn-lg hvr-pulse" href="https://stackoverflow.com/users/4475333/urco" role="button">
-                        <i class="fa fa-stack-overflow"></i> Stackoverflow
-                      </a>
-                    </li>
-                </ul>
+              <!-- Custom Separator between header and social media buttons -->
+              <div class="custom-hr">
+                <hr>
               </div>
+
+              <br>
+              <!-- Button list -->
+              <ul class="list-inline">
+                  <li>
+                    <a class="btn btn-default btn-lg hvr-pulse" href="https://twitter.com/fro_g" role="button">
+                      <i class="fa fa-twitter-square"></i> Twitter
+                    </a>
+                  </li>
+                  <li>
+                    <a class="btn btn-default btn-lg hvr-pulse" href="https://github.com/fr0gs" role="button">
+                      <i class="fa fa-github"></i> Github
+                    </a>
+                  </li>
+                  <li>
+                    <a class="btn btn-default btn-lg hvr-pulse" href="https://es.linkedin.com/in/estebansastre" role="button">
+                      <i class="fa fa-linkedin"></i> Linkedin
+                    </a>
+                  </li>
+                  <li>
+                    <a class="btn btn-default btn-lg hvr-pulse" href="https://stackoverflow.com/users/4475333/urco" role="button">
+                      <i class="fa fa-stack-overflow"></i> Stackoverflow
+                    </a>
+                  </li>
+              </ul>
             </div>
-          </div>
-        </div>
-
-
-    <!-- SECOND ROW: ABOUT -->
-    <div class="container-fluid">
-      <div class="row" id="about">
-        <div class="simple-row about-row">
-          <div class="col-xs-12 col-sm-3 col-sm-3 col-sm-offset-1">
-            <p id="intro-paragraph">
-            Hello everyone! I am Esteban Sastre, I am a Computer Science graduate
-            based in Spain, but also willing to relocate or telecommute.
-            I am passionate about almost anything that is related to computers
-            or technology, and I am also a big fan of snowboarding!.
-            My competences encompass HTML5, CSS3/Bootstrap and Java and I am
-            slowly diving deep into the world of Fullstack javascript (MEAN stack).
-            </p>
-          </div>
-          <div class="col-xs-12 col-sm-3 col-sm-offset-2">
-            <div class="circle-image hvr-border-fade"></div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- FOOTER, LAST PIECE OF INFORMATION -->
-    <footer class="row-footer">
-        <div class="container-fluid">
-            <div class="row">
-                <!-- Links div-->
-                <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
-                    <h5>Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact-link">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Social networks data div and navbar-->
-                <div class="col-md-4 col-lg-4">
-                  <div class="nav navbar-nav" style="padding: 40px 10px;">
-                      <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
-                      <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
-                      <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
-                      <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
-                  </div>
-                </div>
-                <div class="col-xs-12">
-                    <p style="padding:10px;"></p>
-                    <p align="center">© Copyright 2015 Esteban Sastre</p>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <!-- Include all compiled plugins (below), orinclude individual files as needed -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

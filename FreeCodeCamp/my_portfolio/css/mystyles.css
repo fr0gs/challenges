@@ -5,7 +5,7 @@
 
 .small-beauty-heading {
   font-family: 'Nunito', sans-serif;
-  color: #DF0101;
+  color: #E56717;
 }
 
 .row-header {
@@ -19,20 +19,20 @@
   padding: 20px 0px 20px 0px;
 }
 
-.simple-row {
-  margin: 0px auto;
-  min-height: 650px;
-  padding: 150px 0px 50px 0px;
+.first-header {
+  padding: 150px 0px 50px 0px; /*top right bottom left*/
   text-align: center;
+  background: url('http://orig12.deviantart.net/ddf1/f/2012/303/0/0/forest_stock_by_dl_stockandresources-d5jffdv.jpg') no-repeat center center fixed;
   background-size: cover;
-}
-
-.home-row {
-  background: url('../img/wood.jpg') no-repeat center center fixed;
+  height: 600px;
 }
 
 .about-row {
   background: url('../img/desert.jpg') no-repeat center center fixed;
+}
+
+.portfolio-row {
+  background: url('../img/snow.jpg') no-repeat center center fixed;
 }
 
 .circle-image {
