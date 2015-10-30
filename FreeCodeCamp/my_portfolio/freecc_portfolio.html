@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <!-- saved from url=(0077)https://d396qusza40orc.cloudfront.net/phoenixassets/web-frameworks/index.html -->
 <html lang="en"><head>
 
@@ -15,25 +14,30 @@
 
   <link href="css/bootstrap-social.css" rel="stylesheet">
 
+  <!-- Hover CSS file -->
+  <link href="css/hover-min.css" rel="stylesheet" media="all">
+
   <!-- Nice font Nunito to style headings -->
   <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+  <!-- Londrina solid font for the introduction paragraph -->
+  <link href='https://fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
 
   <title>Esteban Portfolio</title>
 
 </head>
 
 <body>
-    <div class="wrapper">
       <!-- The navbar that appears at the top of the page-->
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
+        <div class="container-fluid">
           <div class="navbar-header">
             <!-- Navbar header, with my picture(brand), my name and the toggle button when small screens
                 collapse the navbar items.
             -->
             <button type="button" class="navbar-toggle collapsed"
-                data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                data-toggle="collapse" data-target="#mynavbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -50,26 +54,26 @@
           <!-- Navbar of the links -->
           <div id="mynavbar" class="navbar-right navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="nav-link">
-                <a href="#">
+              <li id="home-link">
+                <a href="#home">
                   <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
                 </a>
               </li>
-              <li>
-                <a href="#">
+              <li id="about-link">
+                <a href="#about">
                   <span class="glyphicon glyphicon-info-sign" aria-hidden="true" id="nav-link"></span> About
                 </a>
               </li>
-              <li class="navbar-link">
+              <li id="portfolio-link">
                 <a href="#">
                   <span class="glyphicon glyphicon-leaf" aria-hidden="true" id="nav-link"></span> Portfolio
                 </a>
               </li>
 
               <!-- Contact navbar link -->
-              <li>
+              <li id="contact-link">
                 <a href="#">
-                  <i class="fa fa-envelope-o" id="nav-link"></i> Contact
+                  <i class="fa fa-envelope-o"></i> Contact
                 </a>
               </li>
             </ul>
@@ -77,64 +81,81 @@
         </div>
       </nav>
 
-      <!-- FIRST SECTION, INTRODUCTION AND SOCIAL MEDIA-->
-      <div class="row">
-      <div class="introduction-row">
+        <!-- FIRST SECTION, INTRODUCTION AND SOCIAL MEDIA (HOME)-->
         <div class="container-fluid">
-          <div class="col-xs-12 col-sm-12 col-md-12">
-            <h1 class="beauty-heading">Full Stack Web Development</h1>
+          <div class="row" id="home">
+            <div class="simple-row home-row">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <h1 class="beauty-heading">Full Stack Development</h1>
+                <h3 class="small-beauty-heading">Ready to take care of your projects!</h3>
+
+                <div class="custom-hr">
+                    <hr>
+                </div>
+
+                <br>
+
+                <ul class="list-inline">
+                    <li>
+                      <a class="btn btn-default btn-lg hvr-pulse" href="https://twitter.com/fro_g" role="button">
+                        <i class="fa fa-twitter-square"></i> Twitter
+                      </a>
+                    </li>
+                    <li>
+                      <a class="btn btn-default btn-lg hvr-pulse" href="https://github.com/fr0gs" role="button">
+                        <i class="fa fa-github"></i> Github
+                      </a>
+                    </li>
+                    <li>
+                      <a class="btn btn-default btn-lg hvr-pulse" href="https://es.linkedin.com/in/estebansastre" role="button">
+                        <i class="fa fa-linkedin"></i> Linkedin
+                      </a>
+                    </li>
+                    <li>
+                      <a class="btn btn-default btn-lg hvr-pulse" href="https://stackoverflow.com/users/4475333/urco" role="button">
+                        <i class="fa fa-stack-overflow"></i> Stackoverflow
+                      </a>
+                    </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="custom-hr">
-            <hr>
+
+
+    <!-- SECOND ROW: ABOUT -->
+    <div class="container-fluid">
+      <div class="row" id="about">
+        <div class="simple-row about-row">
+          <div class="col-xs-12 col-sm-3 col-sm-3 col-sm-offset-1">
+            <p id="intro-paragraph">
+            Hello everyone! I am Esteban Sastre, I am a Computer Science graduate
+            based in Spain, but also willing to relocate or telecommute.
+            I am passionate about almost anything that is related to computers
+            or technology, and I am also a big fan of snowboarding!.
+            My competences encompass HTML5, CSS3/Bootstrap and Java and I am
+            slowly diving deep into the world of Fullstack javascript (MEAN stack).
+            </p>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-sm-offset-2">
+            <div class="circle-image hvr-border-fade"></div>
+          </div>
         </div>
-
-        <br>
-
-        <div class="row">
-          <ul class="list-inline">
-              <li>
-                <a class="btn btn-default btn-lg" href="https://twitter.com/fro_g" role="button">
-                  <i class="fa fa-twitter-square"></i> Twitter
-                </a>
-              </li>
-              <li>
-                <a class="btn btn-default btn-lg" href="https://github.com/fr0gs" role="button">
-                  <i class="fa fa-github"></i> Github
-                </a>
-              </li>
-              <li>
-                <a class="btn btn-default btn-lg" href="https://es.linkedin.com/in/estebansastre" role="button">
-                  <i class="fa fa-linkedin"></i> Linkedin
-                </a>
-              </li>
-              <li>
-                <a class="btn btn-default btn-lg" href="https://stackoverflow.com/users/4475333/urco" role="button">
-                  <i class="fa fa-stack-overflow"></i> Stackoverflow
-                </a>
-              </li>
-          </ul>
-        </div>
-
       </div>
-      </div>
-
-
-      <div class="push"></div>
     </div>
 
     <!-- FOOTER, LAST PIECE OF INFORMATION -->
     <footer class="row-footer">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <!-- Links div-->
                 <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
                     <h5>Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="##">Menu</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact-link">Contact</a></li>
                     </ul>
                 </div>
 
@@ -155,16 +176,11 @@
         </div>
     </footer>
 
-
     <!-- Include all compiled plugins (below), orinclude individual files as needed -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript">
-
-    </script>
 
 </body>
 </html>

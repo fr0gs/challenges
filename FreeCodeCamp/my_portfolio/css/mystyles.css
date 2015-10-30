@@ -1,23 +1,16 @@
-html, body {
-  height: 100%;
-}
-
 .beauty-heading {
   font-family: 'Nunito', sans-serif;
   color: #FFFACD;
 }
 
+.small-beauty-heading {
+  font-family: 'Nunito', sans-serif;
+  color: #DF0101;
+}
+
 .row-header {
   margin: 0px auto;
   padding: 0px auto;
-}
-
-.row-content {
-   min-height: 400px;
-   width: 100%;
-   margin-left: auto;
-   margin-right: auto;
-   max-width: initial;
 }
 
 .row-footer {
@@ -26,19 +19,34 @@ html, body {
   padding: 20px 0px 20px 0px;
 }
 
-.introduction-row {
-  height: 650px;
-  padding-top: 15%;
-  /*padding-bottom: 50px;*/
+.simple-row {
+  margin: 0px auto;
+  min-height: 650px;
+  padding: 150px 0px 50px 0px;
   text-align: center;
-  vertical-align: bottom;
-  background: url('../img/wood.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 
-.navbar {
-  margin-bottom: 0px;
+.home-row {
+  background: url('../img/wood.jpg') no-repeat center center fixed;
 }
+
+.about-row {
+  background: url('../img/desert.jpg') no-repeat center center fixed;
+}
+
+.circle-image {
+	width: 300px;
+	height: 300px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 100px;
+	background: url('../img/myself.jpg') no-repeat center;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
 
 #mynavbar > ul > li > a {
   color: #FFFFFF;
@@ -58,20 +66,11 @@ html, body {
   color: #FFF;
 }
 
-* {
-  margin: 0px;
+#intro-paragraph {
+  font-family: 'Londrina Solid', cursive;
+  color: #000;
 }
 
-.wrapper {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -4em;
-}
-
-.push {
-  height: 4em;
-}
 
 /* Personalized div hr separator*/
 .custom-hr {
@@ -80,4 +79,30 @@ html, body {
   margin-right: auto;
   width: 50em;
   height: 2px;
+}
+
+
+@media (min-width: 1200px) {
+  #intro-paragraph {
+    font-size: 150%;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 979px) {
+  #intro-paragraph {
+    font-size: 130%;
+  }
+}
+
+@media (max-width: 767px) {
+  #intro-paragraph {
+    font-size: 120%;
+  }
+}
+
+@media (max-width: 480px) {
+  #intro-paragraph {
+    font-size: 100%;
+  }
 }
