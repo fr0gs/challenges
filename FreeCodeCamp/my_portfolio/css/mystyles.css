@@ -10,7 +10,7 @@
 
 .row-footer {
   background-color: #AFAFAF;
-  margin: 0px auto;
+  margin: 0px 0px;
   padding: 20px 0px 20px 0px;
 }
 
@@ -34,7 +34,13 @@
 .third-header {
   /*margin-top: -50px;*/
   background: url('http://7-themes.com/data_images/out/30/6872471-desert-landscape.jpg') no-repeat center center fixed;
+  height: 700px;
 }
+
+.fourth-header {
+  background: url('http://www.soupehe.com/images/high-quality-new-york-landscape-9-new-york-city-landscape-1920-x-1080.jpg') no-repeat center center fixed;
+}
+
 
 .circle-image {
 	width: 250px;
