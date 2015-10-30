@@ -8,40 +8,41 @@
   color: #E56717;
 }
 
-.row-header {
-  margin: 0px auto;
-  padding: 0px auto;
-}
-
 .row-footer {
   background-color: #AFAFAF;
   margin: 0px auto;
   padding: 20px 0px 20px 0px;
 }
 
-.first-header {
+.row-common {
+  margin: 0px auto;
   padding: 150px 0px 50px 0px; /*top right bottom left*/
   text-align: center;
-  background: url('http://orig12.deviantart.net/ddf1/f/2012/303/0/0/forest_stock_by_dl_stockandresources-d5jffdv.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 600px;
 }
 
-.about-row {
-  background: url('../img/desert.jpg') no-repeat center center fixed;
+.first-header {
+  background: url('http://orig12.deviantart.net/ddf1/f/2012/303/0/0/forest_stock_by_dl_stockandresources-d5jffdv.jpg') no-repeat center center fixed;
 }
 
-.portfolio-row {
-  background: url('../img/snow.jpg') no-repeat center center fixed;
+.second-header {
+  /*margin-top: -50px;*/
+  background: url('http://miriadna.com/desctopwalls/images/max/Snow-row.jpg') no-repeat center center fixed;
+}
+
+.third-header {
+  /*margin-top: -50px;*/
+  background: url('http://7-themes.com/data_images/out/30/6872471-desert-landscape.jpg') no-repeat center center fixed;
 }
 
 .circle-image {
-	width: 300px;
-	height: 300px;
-	border-radius: 150px;
-	-webkit-border-radius: 150px;
-	-moz-border-radius: 100px;
-	background: url('../img/myself.jpg') no-repeat center;
+	width: 250px;
+	height: 250px;
+	border-radius: 125px;
+	-webkit-border-radius: 125px;
+	-moz-border-radius: 125px;
+	background: url('../img/rsz_myself.jpg') no-repeat center;
   box-shadow: 0 0 8px rgba(0, 0, 0, .8);
   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
@@ -68,7 +69,7 @@
 
 #intro-paragraph {
   font-family: 'Londrina Solid', cursive;
-  color: #000;
+  color: #3B3131;
 }
 
 
@@ -91,13 +92,13 @@
 
 @media (min-width: 768px) and (max-width: 979px) {
   #intro-paragraph {
-    font-size: 130%;
+    font-size: 140%;
   }
 }
 
 @media (max-width: 767px) {
   #intro-paragraph {
-    font-size: 120%;
+    font-size: 130%;
   }
 }
 

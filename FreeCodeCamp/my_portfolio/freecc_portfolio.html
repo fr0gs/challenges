@@ -65,14 +65,14 @@
                 </a>
               </li>
               <li id="portfolio-link">
-                <a href="#">
+                <a href="#portfolio">
                   <span class="glyphicon glyphicon-leaf" aria-hidden="true" id="nav-link"></span> Portfolio
                 </a>
               </li>
 
               <!-- Contact navbar link -->
               <li id="contact-link">
-                <a href="#">
+                <a href="#contact">
                   <i class="fa fa-envelope-o"></i> Contact
                 </a>
               </li>
@@ -88,9 +88,9 @@
         and then inside it the first-header. In order to make it work
         it has to be a l'envers. Remember it Esteban.
       -->
-      <div class="first-header">
+      <div class="row-common first-header" id="home">
         <div class="container-fluid">
-          <div class="row" id="home">
+          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
               <!-- Big header -->
               <h1 class="beauty-heading">
@@ -134,6 +134,59 @@
           </div>
         </div>
       </div>
+
+      <!-- SECOND SECTION (ABOUT)-->
+      <div class="row-common second-header" id="about">
+        <div class="container-fluid">
+          <div class="row">
+            <!-- Introductory paragraph -->
+            <div class="col-xs-12 col-sm-3 col-sm-3 col-sm-offset-1">
+              <p id="intro-paragraph">
+              Hello everyone! I am Esteban Sastre, I am a Computer Science graduate
+              based in Spain, but also willing to relocate or telecommute.
+              I am passionate about almost anything that is related to computers
+              or technology, and I am also a big fan of snowboarding!.
+              My competences encompass HTML5, CSS3/Bootstrap and Java and I am
+              slowly diving deep into the world of Fullstack javascript (MEAN stack).
+              </p>
+            </div>
+            <!-- Self-picture -->
+            <div class="col-xs-12 col-sm-3 col-sm-offset-2">
+              <div class="circle-image hvr-border-fade"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row-common third-header" id="portfolio">
+        <div class="container-fluid">
+          <div class="row">
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER: LAST SECTIOn -->
+      <footer class="row-footer">
+        <div class="container">
+          <div class="row">
+            <!-- Links div-->
+            <div class="col-xs-12 col-sm-4 col-sm-offset-1">
+              <h5>Links</h5>
+              <ul class="list-inline">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-sm-offset-1">
+              <p>
+                Copyright 2015. Esteban Sastre Ferrández
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
 
     <!-- Include all compiled plugins (below), orinclude individual files as needed -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
