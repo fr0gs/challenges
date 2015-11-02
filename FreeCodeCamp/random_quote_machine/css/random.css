@@ -1,0 +1,26 @@
+.myjumbotron {
+  background-color: darkkhaki;
+}
+
+.myjumbotron h1 {
+  font-family: 'Sorts Mill Goudy', serif;
+}
+
+.row-header {
+  margin:0px auto;
+  padding:0px auto;
+}
+
+.row-centered {
+  text-align: center;
+}
+
+.quote-placeholder {
+  margin-top: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: auto;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: black;
+}

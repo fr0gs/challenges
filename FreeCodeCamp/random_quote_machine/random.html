@@ -1,0 +1,103 @@
+
+<!doctype html>
+<html>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" name="twitter:widgets:csp" content="on">
+
+  <head>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Sorts Mill Goudy gogle font-->
+    <link href='https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
+
+    <!-- Own CSS file -->
+    <link href="css/random.css" rel="stylesheet">
+
+    <title>
+      Your Funny Random Quote Machine
+    </title>
+  </head>
+
+  <body style="background-color: peru">
+    <header class="jumbotron myjumbotron">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Main component for a primary marketing message or call to action -->
+        <div class="container-fluid">
+            <div class="row row-header row-centered">
+              <div class="col-xs-12" style="text-align:center">
+                <h1 >Random Quote Machine </h1>
+              </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row row-header row-centered">
+        <div class="col-xs-6 col-xs-offset-3" style="text-align:center">
+          <h3>
+            I hereby show you some interesting quotes that
+            may interest you and you'll find them profitable!
+          </h3>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row row-header row-centered">
+        <div class="col-xs-6 col-xs-offset-3" style="text-align:center">
+          <div class="btn-group" data-toggle="buttons">
+
+            <button type="button" class="btn btn-warning btn-lg" id="chuckstuff">
+              Chuck Norris Jokes!
+            </button>
+
+            <button type="button" class="btn btn-danger btn-lg" data-toggle="tooltip"
+                    data-placement="right" title="This is just a Proof of Concept, it works but if you want to see quotes introduce your own Mashape API key :D"
+                    id="boringstuff">
+                    Boring Stuff
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <!-- Row with the Tweet button -->
+      <!-- https://twitter.com/intent/tweet-->
+      <div class="row row-header">
+        <div class="col-xs-6 col-xs-offset-3" style="text-align:center">
+          <a class="btn btn-info btn-lg" href="#"
+            data-size="large" id="tweet-button"><i class="fa fa-twitter"></i>Tweet the current quote!
+          </a>
+        </div>
+      </div>
+
+      <div class="row row-centered">
+        <div class="col-xs-6 col-xs-offset-3" style="text-align:center">
+          <div class="quote-placeholder">
+            <strong><span id="author"></span></strong><br>
+            <strong><span id="quote"></span></strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  <!-- Include all compiled plugins (below), orinclude individual files as needed -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <script type="text/javascript" src="js/functions.js"></script>
+
+  </body>
+</html>
