@@ -1,6 +1,8 @@
 function spinalCase(str) {
-  str = str.split(" ");
-  return str;
+
+  str = str.replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase();
+  
+  return str.replace(new RegExp("\\s+|_+", "g"), "-");
 }
 
-console.log(spinalCase('This Is Spinal Tap'));
+console.log(spinalCase("thisIsSpinalTap"));

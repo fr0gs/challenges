@@ -11,6 +11,9 @@ $(document).ready(function () {
       success: function (data) {
         $("#author").remove();
         $("#quote").append(data["value"]["joke"]);
+      },
+      xhrFields: {
+        withCredentials: false
       }
     });
   };
@@ -57,7 +60,8 @@ $(document).ready(function () {
   });
 
   $("#tweet-button").click(function (){
-    $(this).attr("href", "https://twitter.com/intent/tweet?text=" + $("#quote").text());
+    //window.open("https://twitter.com/intent/tweet?text=ABC");
+    $(this).attr("href", "https://twitter.com/intent/tweet?text=" + encodeURIComponent($("#quote").text()) );
   });
 
 });

@@ -1,7 +1,7 @@
 
 <!doctype html>
 <html>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" name="twitter:widgets:csp" content="on">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
   <head>
 
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <!-- Sorts Mill Goudy gogle font-->
-    <link href='https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy" rel="stylesheet" type="text/css">
 
     <!-- Own CSS file -->
     <link href="css/random.css" rel="stylesheet">
@@ -77,7 +77,9 @@
       <div class="row row-header">
         <div class="col-xs-6 col-xs-offset-3" style="text-align:center">
           <a class="btn btn-info btn-lg" href="#"
-            data-size="large" id="tweet-button"><i class="fa fa-twitter"></i>Tweet the current quote!
+            data-size="large" id="tweet-button" data-toggle="tooltip"
+            data-placement="bottom" title="This does not work in codepen due to the X-Frame-Options: 'SAMEORIGIN' policy, but it does locally">
+              <i class="fa fa-twitter"></i>Tweet the current quote!
           </a>
         </div>
       </div>
