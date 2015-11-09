@@ -1,0 +1,81 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+  <link rel="stylesheet" href="pomodoro.css" media="screen" title="pomodoro styles" charset="utf-8">
+
+</head>
+<body>
+
+
+<main ng-app="myApp.pomodoro" ng-controller="PomodoroController">
+  <div class="container-fluid">
+    <div class="row row-header row-centered">
+      <div class="col-xs-12">
+        <h1 class="main-heading">Pomodoro Timer App for your pleasure!</h1>
+      </div>
+    </div>
+
+    <!-- Row for both the buttons to increase/decrease break and session -->
+    <div class="row row-buttons">
+      <!-- Break time-->
+      <div class="col-xs-12 col-sm-3 col-sm-offset-3">
+        <span class="information">Break length</span>
+        <button type="button" class="btn btn-md" id="decrease-break" ng-click="decreaseBreak()">
+          <b>-</b>
+        </button>
+        <span class="label label-primary" style="font-size: 130%">{{ breakTime }}</span>
+        <button type="button" class="btn btn-md" id="increase-break" ng-click="increaseBreak()">
+          <b>+</b>
+        </button>
+      </div>
+
+      <!-- Session time-->
+      <div class="col-xs-12 col-sm-3 col-sm-offset-1">
+        <span class="information">Session length</span>
+        <button type="button" class="btn btn-md" id="decrease-session" ng-click="decreaseSession()">
+          <b>-</b>
+        </button>
+        <span class="label label-primary" style="font-size: 130%">{{ sessionTime }}</span>
+        <button type="button" class="btn btn-md" id="increase-session" ng-click="increaseSession()">
+          <b>+</b>
+        </button>
+      </div>
+    </div>
+
+    <!-- Row for the timer -->
+    <div class="row row-centered row-clock">
+      <div class="col-xs-12">
+        <h2>{{ actual }} timer!</h2>
+        <h3>{{ clockTimer | visualTimerFilter }}</h3>
+      </div>
+    </div>
+
+
+    <div class="row row-centered">
+      <div class="col-xs-12">
+        <button type="button" class="btn btn-success btn-md" id="start-timer" ng-click="startTimer()">
+          Start
+        </button>
+        <button type="button" class="btn btn-warning btn-md" id="stop-timer" ng-click="stopTimer()">
+          Stop
+        </button>
+      </div>
+    </div>
+  </div>
+</main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+
+  <script src="./pomodoro.js"></script>
+
+
+</body>
+</html>

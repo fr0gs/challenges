@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <div class="row row-header row-centered">
+    <div class="col-xs-12">
+      <h1 class="main-heading">Pomodoro Timer App for your pleasure!</h1>
+    </div>
+  </div>
+
+  <!-- Row for both the buttons to increase/decrease break and session -->
+  <div class="row row-buttons">
+    <!-- Break time-->
+    <div class="col-xs-12 col-sm-3 col-sm-offset-3">
+      <span class="information">Break length</span>
+      <button type="button" class="btn btn-md" id="decrease-break" ng-click="decreaseBreak()">
+        <b>-</b>
+      </button>
+      <span class="label label-primary" style="font-size: 130%">{{ breakTime }}</span>
+      <button type="button" class="btn btn-md" id="increase-break" ng-click="increaseBreak()">
+        <b>+</b>
+      </button>
+    </div>
+
+    <!-- Session time-->
+    <div class="col-xs-12 col-sm-3 col-sm-offset-1">
+      <span class="information">Session length</span>
+      <button type="button" class="btn btn-md" id="decrease-session" ng-click="decreaseSession()">
+        <b>-</b>
+      </button>
+      <span class="label label-primary" style="font-size: 130%">{{ sessionTime }}</span>
+      <button type="button" class="btn btn-md" id="increase-session" ng-click="increaseSession()">
+        <b>+</b>
+      </button>
+    </div>
+  </div>
+
+  <!-- Row for the timer -->
+  <div class="row row-centered row-clock">
+    <div class="col-xs-12">
+      <h2>{{ actual }} timer!</h2>
+      <h3>{{ clockTimer | visualTimerFilter }}</h3>
+    </div>
+  </div>
+
+
+  <div class="row row-centered">
+    <div class="col-xs-12">
+      <button type="button" class="btn btn-success btn-md" id="start-timer" ng-click="startTimer()">
+        Start
+      </button>
+      <button type="button" class="btn btn-warning btn-md" id="stop-timer" ng-click="stopTimer()">
+        Stop
+      </button>
+    </div>
+  </div>
+
+</div>

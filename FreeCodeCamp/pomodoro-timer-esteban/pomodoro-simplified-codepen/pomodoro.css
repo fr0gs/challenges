@@ -1,0 +1,33 @@
+body {
+  background-color: seagreen;
+}
+
+.row-header {
+  margin: 0px auto;
+  padding: 0px auto;
+  height: 150px;
+  color: tomato;
+}
+
+.row-centered {
+  text-align: center;
+}
+
+.row-buttons {
+  padding-top: auto;
+}
+
+.row-clock {
+  margin-top: 100px;
+  height: 250px;
+  width: auto;
+}
+
+.main-heading {
+  font-family: 'Pathway Gothic One', sans-serif;
+}
+
+.information {
+  font-family: 'Bubblegum Sans', sans-serif;
+  font-size: 120%;
+}
