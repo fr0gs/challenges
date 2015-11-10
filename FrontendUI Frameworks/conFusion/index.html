@@ -4,14 +4,9 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <!-- Own CSS file -->
-  <!-- <link href="css/mystyles.css" rel="stylesheet"> -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
   <link href="css/bootstrap-social.css" rel="stylesheet">
 
@@ -181,9 +176,12 @@
             </li>
           </ul>
 
+          <!-- Login button that will toggle the modal -->
           <ul class="nav navbar-nav navbar-right">
-             <li><a data-toggle="modal" data-target="#loginModal">
-             <span class="glyphicon glyphicon-log-in"></span> Login</a>
+             <li>
+               <a id="login-modal-button">
+                 <span class="glyphicon glyphicon-log-in"></span> Login
+               </a>
              </li>
            </ul>
 
@@ -241,7 +239,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-2">
                     <p style="padding:50px;"></p>
-                    <a type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#reserveModal">Reserve Table</a>
+                    <a type="button" class="btn btn-warning btn-block" id="reserve-table-button">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -562,15 +560,22 @@
     <![endif]-->
 
 
-    <!-- Include all compiled plugins (below), orinclude individual files as needed -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Javascript for the carousel functions -->
     <script>
         $(document).ready(function(){
+
+            $("#login-modal-button").click(function () {
+              $("#loginModal").modal('toggle');
+            });
+
+            $("#reserve-table-button").click(function () {
+              $("#reserveModal").modal('toggle');
+            });
+
             $("#mycarousel").carousel( { interval: 2000 } );
 
             $("#carousel-pause").click(function(){
