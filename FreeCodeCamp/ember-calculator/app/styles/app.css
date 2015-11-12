@@ -1,0 +1,9 @@
+body {
+  background-color: grey;
+}
+
+row-header {
+  display: block;
+  width: auto;
+  color: black;
+}
