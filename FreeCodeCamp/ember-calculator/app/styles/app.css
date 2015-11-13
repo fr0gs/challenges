@@ -7,3 +7,10 @@ row-header {
   width: auto;
   color: black;
 }
+
+.calculator-div {
+  margin-top: 50px;
+  height: 180px;
+  width: 200px;
+  border: 1px solid black;
+}

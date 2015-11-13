@@ -1,30 +1,30 @@
 <div class="container-fluid">
   <div class="row row-header">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-5">
+    <div class="col-xs-12 col-xs-offset-4">
       <h2 id="title">{{ model.title }}</h2>
     </div>
     <br>
     <br>
 
     <!-- This input text will be bound to the wholeExpression string variable -->
-    <div class="col-xs-12 col-sm-4 col-sm-offset-5">
+    <div class="col-xs-12 col-xs-offset-5">
       <div class="row">
-        {{ input value=model.result }}
+        {{ input value=model.result}}
       </div>
     </div>
 
 
     <!-- -->
     <div class="row">
-      <div class="col-xs-12 col-sm-3 col-sm-offset-5">
-        <div class="table-responsive">
-          <table class="table">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-5">
+        <div class="table-responsive calculator-div">
+          <table class="calculator-table">
             <tr>
               <td>
-                <button class="btn btn-info btn-xs" {{ action 'clear' }}>CE&nbsp;</button>
+                <button class="btn btn-info btn-md" {{ action 'clear' }}>CE&nbsp;</button>
               </td>
               <td>
-                <button class="btn btn-info btn-xs">CA&nbsp;</button>
+                &nbsp;
               </td>
               <td>
                 &nbsp;
@@ -35,40 +35,40 @@
                 <!-- rien de rien -->
               </td>
               <td>
-                <button class="btn btn-info btn-xs">&nbsp;+&nbsp;</button>
+                <button class="btn btn-info btn-md" {{ action 'operation' '+' }}>&nbsp;+&nbsp;</button>
               </td>
             </tr>
 
             <tr>
-              <td><button class="btn btn-info btn-xs" {{ action 'clickedNum' '7' }}>&nbsp;7&nbsp;</button></td>
-              <td><button class="btn btn-info btn-xs" {{ action 'clickedNum' '8' }}>&nbsp;8&nbsp;</button></td>
-              <td><button class="btn btn-info btn-xs" {{ action 'clickedNum' '9' }}>&nbsp;9&nbsp;</button></td>
+              <td><button class="btn btn-info btn-md" {{ action 'clickedNum' '7' }}>&nbsp;7&nbsp;</button></td>
+              <td><button class="btn btn-info btn-md" {{ action 'clickedNum' '8' }}>&nbsp;8&nbsp;</button></td>
+              <td><button class="btn btn-info btn-md" {{ action 'clickedNum' '9' }}>&nbsp;9&nbsp;</button></td>
               <td>&nbsp;</td>
-              <td><button class="btn btn-info btn-xs">&nbsp;-&nbsp;</button></td>
+              <td><button class="btn btn-info btn-md" {{ action 'operation' '-' }}>&nbsp;-&nbsp;</button></td>
             </tr>
 
             <tr>
-              <td><button class="btn btn-info btn-xs" {{ action 'clickedNum' '4' }}>&nbsp;4&nbsp;</button></td>
-              <td><button class="btn btn-info btn-xs" {{ action 'clickedNum' '5' }}>&nbsp;5&nbsp;</button></td>
-              <td><button class="btn btn-info btn-xs" {{ action 'clickedNum' '6' }}>&nbsp;6&nbsp;</button></td>
+              <td><button class="btn btn-info btn-md" {{ action 'clickedNum' '4' }}>&nbsp;4&nbsp;</button></td>
+              <td><button class="btn btn-info btn-md" {{ action 'clickedNum' '5' }}>&nbsp;5&nbsp;</button></td>
+              <td><button class="btn btn-info btn-md" {{ action 'clickedNum' '6' }}>&nbsp;6&nbsp;</button></td>
               <td>&nbsp;</td>
-              <td><button class="btn btn-info btn-xs">&nbsp;X&nbsp;</button></td>
+              <td><button class="btn btn-info btn-md" {{ action 'operation' 'X' }}>&nbsp;X&nbsp;</button></td>
             </tr>
 
             <tr>
-              <td><button class="btn btn-info btn-xs" {{ action 'clickedNum' '1' }}>&nbsp;1&nbsp;</button></td>
-              <td><button class="btn btn-info btn-xs" {{ action 'clickedNum' '2' }}>&nbsp;2&nbsp;</button></td>
-              <td><button class="btn btn-info btn-xs" {{ action 'clickedNum' '3' }}>&nbsp;3&nbsp;</button></td>
+              <td><button class="btn btn-info btn-md" {{ action 'clickedNum' '1' }}>&nbsp;1&nbsp;</button></td>
+              <td><button class="btn btn-info btn-md" {{ action 'clickedNum' '2' }}>&nbsp;2&nbsp;</button></td>
+              <td><button class="btn btn-info btn-md" {{ action 'clickedNum' '3' }}>&nbsp;3&nbsp;</button></td>
               <td>&nbsp;</td>
-              <td><button class="btn btn-info btn-xs">&nbsp;%&nbsp;</button></td>
+              <td><button class="btn btn-info btn-md" {{ action 'operation' '%' }}>&nbsp;%&nbsp;</button></td>
             </tr>
 
             <tr>
-              <td><button class="btn btn-info btn-xs">&nbsp;0&nbsp;</button></td>
-              <td><button class="btn btn-info btn-xs">&nbsp;.&nbsp;</button></td>
+              <td><button class="btn btn-info btn-md" {{ action 'clickedNum' '0' }}>&nbsp;0&nbsp;</button></td>
+              <td><button class="btn btn-info btn-md">&nbsp;.&nbsp;</button></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
-              <td><button class="btn btn-info btn-xs">&nbsp;=&nbsp;</button></td>
+              <td><button class="btn btn-info btn-md" {{ action 'getResult' }}>&nbsp;=&nbsp;</button></td>
             </tr>
 
           </table>
