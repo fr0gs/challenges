@@ -65,10 +65,10 @@
 
             <tr>
               <td><button class="btn btn-info btn-md" {{ action 'clickedNum' '0' }}>&nbsp;0&nbsp;</button></td>
-              <td><button class="btn btn-info btn-md">&nbsp;.&nbsp;</button></td>
+              <td><button class="btn btn-info btn-md" {{ action 'clickedNum' '.' }}>&nbsp;.&nbsp;</button></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
-              <td><button class="btn btn-info btn-md" {{ action 'getResult' }}>&nbsp;=&nbsp;</button></td>
+              <td><button class="btn btn-info btn-md" {{ action 'operation' '=' }}>&nbsp;=&nbsp;</button></td>
             </tr>
 
           </table>

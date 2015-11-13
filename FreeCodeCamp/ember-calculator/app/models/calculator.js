@@ -26,14 +26,17 @@ var Calculator = Ember.Object.extend({
   operandOne: null,
   operandTwo: null,
 
-  showResult: function () {
-    return this.get('result')
-  }.property('result'),
 
   executeOp: function (operator, op1, op2) {
     var func = this.operation[operator];
     return func(op1, op2);
-  }
+  },
+
+  printCalc: function () {
+    return 'mode.result: ' + this.get('result') + '\n'+ 'model.status: ' + this.get('status') + '\n' +
+              'model.currentOp: ' + this.get('currentOp') + '\n' + 'model.operandOne: ' + this.get('operandOne') + '\n' +
+              'model.operandTwo: ' + this.get('operandTwo') + '\n' + '++++++++++++++++++++++++++++++++++++++';
+  }.property('result', 'status', 'currentOp', 'operandOne', 'operandTwo')
 });
 
 export default Calculator;

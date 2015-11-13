@@ -7,7 +7,7 @@ var Router = Ember.Router.extend({
 
 //A new route to the calculator router when /calculator is accessed.
 Router.map(function() {
-  this.route('calculator', { path: '/calculator' });
+  this.route('calculator', { path: '/' });
 });
 
 export default Router;
