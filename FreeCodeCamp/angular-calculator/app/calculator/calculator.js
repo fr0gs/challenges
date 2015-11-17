@@ -51,41 +51,39 @@ angular.module('myApp.CalculatorModule', ['ngRoute'])
 
 
   $scope.operation = function(oper) {
-    let res = this.get('controller').get('model.result');
-    let stat = this.get('controller').get('model.status');
+    //Get current result and status from the calculator
+    let res = calc.result;
+    let stat = calc.status;
 
-    this.get('controller').set('model.result', '');
+    $scope.result = ''; //So it clears in view's input textbox
+    calc.result = '';
 
     //check if there is any number in the result, otherwise do nothing.
     if (stat === 'initial') {
-      this.get('controller').setProperties({
-        'model.operandOne': res,
-        'model.currentOp': oper,
-        'model.status': 'middleop'
-      });
+      calc.operandOne = res;
+      calc.currentOp = oper;
+      calc.status = 'middleop';
     }
 
     if (stat === 'middleop') {
       //Calculate result and assign to first operand (always).
-      let operation = this.get('controller').get('model.currentOp');
-      this.get('controller').set('model.operandTwo', res); //set result as the second operand.
-      let firstOp = parseFloat(this.get('controller').get('model.operandOne'));
-      let secondOp = parseFloat(this.get('controller').get('model.operandTwo'));
-      let resAux = this.get('controller').get('model').executeOp(operation, firstOp, secondOp);
+      let operation = calc.currentOp;
+      calc.operandTwo = res;
 
-      this.get('controller').setProperties({
-        'model.currentOp': oper, //current operation is now the passed one
-        'model.operandOne': resAux
-      });
+      let firstOp = parseFloat(calc.operandOne);
+      let secondOp = parseFloat(calc.operandTwo);
+      let resAux = calc.executeOp(operation, firstOp, secondOp);
+
+      calc.currentOp = oper;
+      calc.operandOne = resAux;
 
       //If the operand clicked is the equals it shows the result.
       if (oper === '=') {
-        this.get('controller').setProperties({
-          'model.result': resAux,
-          'model.status': 'initial',
-          'model.operandOne': '',
-          'model.operandTwo': ''
-        });
+        $scope.result = resAux;
+        calc.result = '';
+        calc.status = 'initial';
+        calc.operandOne = '';
+        calc.operandTwo = '';
       }
     }
   };
