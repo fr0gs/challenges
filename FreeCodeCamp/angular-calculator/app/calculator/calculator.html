@@ -1,0 +1,54 @@
+<main ng-app="myApp.AngularCalculator">
+  <div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-xs-offset-4">
+      <h2 class="mytitle"><span class="label label-danger">{{ title }}</span></h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="container calculator-div">
+      <!-- This input text will be bound to the wholeExpression string variable -->
+      <form class="form-inline">
+        <div class="form-group">
+          <div class="col-xs-12">
+              <input type="text" name="input" ng-model="result">
+          </div>
+        </div>
+      </form>
+
+      <div class="col-xs-12">
+        <span><button class="mybutton btn btn-success" ng-click="clickedNum(7)">7</button></span>
+        <span><button class="mybutton btn btn-success" ng-click="clickedNum(8)">8</button></span>
+        <span><button class="mybutton btn btn-success" ng-click="clickedNum(9)">9</button></span>
+        <span><button class="mybutton btn btn-warning" ng-click="operation('+')">+</button></span>
+      </div>
+
+      <div class="col-xs-12">
+        <span><button class="mybutton btn btn-success" ng-click="clickedNum(4)">4</button></span>
+        <span><button class="mybutton btn btn-success" ng-click="clickedNum(5)">5</button></span>
+        <span><button class="mybutton btn btn-success" ng-click="clickedNum(6)">6</button></span>
+        <span><button class="mybutton btn btn-warning" ng-click="operation('-')">-</button></span>
+      </div>
+
+      <div class="col-xs-12">
+        <span><button class="mybutton btn btn-success" ng-click="clickedNum(1)">1</button></span>
+        <span><button class="mybutton btn btn-success" ng-click="clickedNum(2)">2</button></span>
+        <span><button class="mybutton btn btn-success" ng-click="clickedNum(3)">3</button></span>
+        <span><button class="mybutton btn btn-warning" ng-click="operation('X')">X</button></span>
+      </div>
+
+      <div class="col-xs-12">
+        <span><button class="mybutton btn btn-success" ng-click="clickedNum(0)">0</button></span>
+        <span><button class="mybutton btn btn-primary" ng-click="clickedNum('.')">.</button></span>
+        <span><button class="mybutton btn btn-warning" ng-click="operation('/')">%</button></span>
+      </div>
+
+      <div class="col-xs-12">
+        <span><button class="mybutton btn btn-danger" ng-click="clear()">CE</button></span>
+        <span><button class="mybutton btn btn-warning" ng-click="operation('=')">=</button></span>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
