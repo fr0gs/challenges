@@ -63,10 +63,7 @@ angular.module('weatherAppAngularApp')
 })
 
 .factory('WeatherService', function($resource, GeolocationPosition) {
-  //var url = "http://api.openweathermap.org/data/2.5/weather?q=Madrid,es&appid=:apikey";
   var url = "http://api.openweathermap.org/data/2.5/weather?lat=:lat&lon=:lon&appid=:apikey";
-  //var url = "http://api.openweathermap.org/data/2.5/weather/";
-
   return $resource(url);
 })
 
@@ -75,6 +72,14 @@ angular.module('weatherAppAngularApp')
   var ApiKey = "6f4032b90a90dae8739e30dfe02eca87";
 
   $scope.isCelsius = true;
+
+  $scope.changeBackground = function() {
+    if ($scope.weatherStatus === "Rain") {
+      return {
+        'background-image': 'url(http://hdwallpapersd.com/wp-content/uploads/2015/09/live-rain-full-hd-wallpaper-for-desktop-background-download-live-rain-images-free.jpeg)'
+      }
+    }
+  }
 
   $scope.getLocation = function() {
     GeolocationPosition.getPosition().then(pos => {
@@ -100,5 +105,6 @@ angular.module('weatherAppAngularApp')
   }
 
   $scope.getLocation();
+  $scope.changeBackground();
 
 });
