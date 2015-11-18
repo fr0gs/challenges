@@ -11,6 +11,22 @@
  */
 angular.module('weatherAppAngularApp')
 
+.filter('KelvinToCelsius', function() {
+  return function(input) {
+    input = input | "";
+    var output = parseFloat(input);
+    return (output-273.15).toPrecision(4);
+  }
+})
+
+.filter('KelvinToFahrenheit', function () {
+  return function(input) {
+    input = input | "";
+    var output = parseFloat(input);
+    return (output * 9 / 5 - 459.67).toPrecision(4);
+  }
+})
+
 .factory('GeolocationPosition', function($q, $window, $rootScope) {
   //This code is mostly based on the Angular Newsletter:
   //http://www.ng-newsletter.com/advent2013/#!/day/12
@@ -19,7 +35,6 @@ angular.module('weatherAppAngularApp')
   if ($window.navigator && $window.navigator.geolocation) geoCapable = true;
 
   if (!geoCapable) {
-    console.log("cagondios");
     $rootScope.broadcast('geo:error', 'geolocation not supported');
   }
 
@@ -49,28 +64,41 @@ angular.module('weatherAppAngularApp')
 
 .factory('WeatherService', function($resource, GeolocationPosition) {
   //var url = "http://api.openweathermap.org/data/2.5/weather?q=Madrid,es&appid=:apikey";
-  //var url = "http://api.openweathermap.org/data/2.5/weather?lat=43.367866400000004&lon=-8.4084311&appid=:apikey";
-  var url = "http://api.openweathermap.org/data/2.5/weather/";
+  var url = "http://api.openweathermap.org/data/2.5/weather?lat=:lat&lon=:lon&appid=:apikey";
+  //var url = "http://api.openweathermap.org/data/2.5/weather/";
 
   return $resource(url);
 })
 
-.controller('MainCtrl', function ($http, $scope, GeolocationPosition, WeatherService) {
-  $http.defaults.useXDomain = true;
+.controller('MainCtrl', function($scope, GeolocationPosition, WeatherService) {
 
   var ApiKey = "6f4032b90a90dae8739e30dfe02eca87";
 
-  $scope.getLocation = function () {
+  $scope.isCelsius = true;
+
+  $scope.getLocation = function() {
     GeolocationPosition.getPosition().then(pos => {
-      $scope.latitude = pos.coords.latitude;
-      $scope.longitude = pos.coords.longitude;
+      WeatherService.get({ lat: pos.coords.latitude, lon: pos.coords.longitude, apikey: ApiKey }, function (data) {
+        $scope.weatherCountry = data.sys["country"];
+        $scope.weatherCity = data.name;
+        $scope.weatherWindSpeed = data.wind.speed;
+        $scope.weatherStatus = data.weather[0]["main"];
+        $scope.weatherDescription = data.weather[0]["description"];
+        $scope.weatherActualTemperature = data.main.temp;
+        $scope.weatherTempMax = data.main.temp_max;
+        $scope.weatherTempMin = data.main.temp_min;
+      });
     })
   }
 
-  $scope.getLocation();
+  $scope.toCelsius = function() {
+    $scope.isCelsius = true;
+  }
 
-  WeatherService.get({ q: 'Madrid,es', apikey: ApiKey  }, function (data) {
-    $scope.weatherData = data;
-  });
+  $scope.toFahrenheit = function() {
+    $scope.isCelsius = false;
+  }
+
+  $scope.getLocation();
 
 });
