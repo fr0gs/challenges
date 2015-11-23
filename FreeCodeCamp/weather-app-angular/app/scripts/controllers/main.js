@@ -15,7 +15,7 @@ angular.module('weatherAppAngularApp')
   return function(input) {
     input = input | "";
     var output = parseFloat(input);
-    return (output-273.15).toPrecision(4);
+    return (output-273.15).toPrecision(3);
   }
 })
 
@@ -52,7 +52,7 @@ angular.module('weatherAppAngularApp')
       }, function(err) {
 
         $rootScope.$broadcast('geo:error', err);
-        d.reject(pos);
+        d.reject(err);
         $rootScope.$apply();
       })
       return d.promise;
