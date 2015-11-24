@@ -76,7 +76,7 @@ angular.module('weatherAppAngularApp')
   $scope.changeBackground = function() {
     if ($scope.weatherStatus === "Rain") {
       return {
-        'background-image': 'url(http://hdwallpapersd.com/wp-content/uploads/2015/09/live-rain-full-hd-wallpaper-for-desktop-background-download-live-rain-images-free.jpeg)'
+        'background-image': 'url(https://i.ytimg.com/vi/MR47cSm4OWk/maxresdefault.jpg)'
       }
     }
     else if ($scope.weatherStatus === "Clouds") {
