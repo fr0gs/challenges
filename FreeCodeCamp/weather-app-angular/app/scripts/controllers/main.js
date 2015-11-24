@@ -79,6 +79,32 @@ angular.module('weatherAppAngularApp')
         'background-image': 'url(http://hdwallpapersd.com/wp-content/uploads/2015/09/live-rain-full-hd-wallpaper-for-desktop-background-download-live-rain-images-free.jpeg)'
       }
     }
+    else if ($scope.weatherStatus === "Clouds") {
+      return {
+        'background-image': 'url(http://7-themes.com/data_images/out/45/6924603-clouds-background-hd.jpg)'
+      }
+    }
+    else if ($scope.weatherStatus === "Clear") {
+      return {
+        'background-image': 'url(http://p1.pichost.me/i/68/1924612.jpg)'
+      }
+    }
+  }
+
+  $scope.changeIcon = function () {
+    switch($scope.weatherStatus) {
+      case "Rain":
+          $scope.iconClass = "fa fa-tint fa-lg";
+          break;
+      case "Clouds":
+          $scope.iconClass = "fa fa-cloud fa-lg";
+          break;
+      case "Clear":
+          $scope.iconClass = "fa fa-sun-o fa-lg";
+          break;
+      default:
+          $scope.iconClass = "";
+    }
   }
 
   $scope.getLocation = function() {
@@ -92,6 +118,11 @@ angular.module('weatherAppAngularApp')
         $scope.weatherActualTemperature = data.main.temp;
         $scope.weatherTempMax = data.main.temp_max;
         $scope.weatherTempMin = data.main.temp_min;
+
+        //This calls are done inside this function because we don't know when
+        //the promise will return the value.
+        $scope.changeIcon();
+        $scope.changeBackground();
       });
     })
   }
@@ -105,6 +136,4 @@ angular.module('weatherAppAngularApp')
   }
 
   $scope.getLocation();
-  $scope.changeBackground();
-
 });

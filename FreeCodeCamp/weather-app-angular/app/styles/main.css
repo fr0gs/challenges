@@ -1,9 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+
 .weather-information {
-  background-color: white;
+  font-family: 'Ubuntu', sans-serif;
+  color: darkred;
 }
 
 .place-information {
-  color: green;
+  color: black;
+  font-weight: bold;
 }
 
 .navbar .navbar-header .navbar-brand {
