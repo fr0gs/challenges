@@ -1,1 +1,13 @@
-<p>This is the offline view.</p>
+<label>Search user: <input type="text" name="search" ng-model="searchText" ng-trim="true"></label>
+<ul class="list-unstyled">
+  <li ng-repeat="userdata in twitchUsersData | filter: searchText">
+    <ul class="list-unstyled">
+      <li ng-repeat="(name, data) in userdata" ng-init="userUrl = 'http://www.twitch.tv/' + name" ng-show="data.stream === null">
+        <img src="{{ data.stream.channel.logo }}" alt="user-logo" height="50" width="50" ng-show="data.stream !== null"/>
+        <img src="../images/redcross.png" alt="_blank" height="50" width="50" ng-hide="data.stream !== null" />
+        <a href="{{ userUrl }}" target="_blank">{{ name }}</a>
+        <span ng-show="data.stream !== null">CONECTADO</span>
+      </li>
+    </ul>
+  </li>
+</ul>

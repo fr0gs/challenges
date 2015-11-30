@@ -1,8 +1,15 @@
+<label>Search user: <input type="text" name="search" ng-model="searchText" ng-trim="true"></label>
 <ul class="list-unstyled">
-  <li ng-repeat="userdata in twitchUsersData">
+  <li ng-repeat="userdata in twitchUsersData | filter: searchText">
     <ul class="list-unstyled">
-      <li ng-repeat="(key, value) in userdata">
-        {{ key }}
+      <li ng-repeat="(name, data) in userdata" ng-init="userUrl = 'http://www.twitch.tv/' + name">
+        <img src="{{ data.stream.channel.logo }}" alt="user-logo" height="50" width="50" ng-show="data.stream !== null"/>
+        <img src="../images/redcross.png" alt="_blank" height="50" width="50" ng-hide="data.stream !== null" />
+        <a href="{{ userUrl }}" target="_blank">{{ name }}</a>
+        <span ng-show="data.stream !== null">CONECTADO</span>
+        <span ng-hide="data.stream !== null">DESCONECTADO</span>
+        <br>
+        <span ng-show="data.stream !== null">{{ data.stream.game }}, {{ data.stream.viewers }} viewers</span>
       </li>
     </ul>
   </li>

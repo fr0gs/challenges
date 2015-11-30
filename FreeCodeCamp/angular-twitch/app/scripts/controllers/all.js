@@ -9,6 +9,5 @@
  */
 angular.module('angularTwitchApp')
   .controller('AllCtrl', function ($scope, $rootScope, twitch) {
-
-
+    
   });
