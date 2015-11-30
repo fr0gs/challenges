@@ -9,9 +9,5 @@
  */
 angular.module('angularTwitchApp')
   .controller('OnlineCtrl', function ($rootScope) {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    
   });

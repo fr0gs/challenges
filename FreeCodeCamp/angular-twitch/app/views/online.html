@@ -1,1 +1,9 @@
-<p>This is the online view.</p>
+<ul class="list-unstyled">
+  <li ng-repeat="userdata in twitchUsersData">
+    <ul class="list-unstyled">
+      <li ng-repeat="(key, value) in userdata">
+        <span>{{ value.strem }}</span>
+      </li>
+    </ul>
+  </li>
+</ul>

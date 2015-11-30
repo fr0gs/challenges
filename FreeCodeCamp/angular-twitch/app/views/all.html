@@ -1,1 +1,9 @@
-<p>{{ }}</p>
+<ul class="list-unstyled">
+  <li ng-repeat="userdata in twitchUsersData">
+    <ul class="list-unstyled">
+      <li ng-repeat="(key, value) in userdata">
+        {{ key }}
+      </li>
+    </ul>
+  </li>
+</ul>
