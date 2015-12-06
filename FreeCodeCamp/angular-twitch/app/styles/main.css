@@ -7,6 +7,7 @@
 
 body {
   padding: 0;
+  background-color: coral;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -22,6 +23,7 @@ body {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+  background-color: #C0C0C0;
 }
 
 .container-narrow > hr {
@@ -33,20 +35,34 @@ body {
   margin-top: 50px;
   text-align: center;
   list-style: none;
-  border: 1px solid black;
 }
 
 .list-inline > li {
   display: inline-block;
   border: 1px solid black;
   padding-top: 6px;
-  width: 120px;
+  width: 200px;
   height: 40px;
+  background-color: darksalmon;
+  font-size: 18px;
 }
 
 .inside-content {
   text-align: left;
+  background-color: cornsilk;
+  border: 1px solid black;
 }
+
+.link-name {
+  color: #00cc00;
+  font-weight: bold;
+}
+
+.game-details {
+  color: red;
+  font-weight: bolder;
+}
+
 
 /* Bubble Bottom */
 .hvr-bubble-bottom {

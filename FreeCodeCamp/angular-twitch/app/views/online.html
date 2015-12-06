@@ -1,14 +1,15 @@
-<label>Search user: <input type="text" name="search" ng-model="searchText" ng-trim="true"></label>
+<div class="form-group">
+  <label>Search user: <input type="text" class="form-control" ng-model="searchText" ng-trim="true"></label>
+</div>
 <ul class="list-unstyled">
   <li ng-repeat="userdata in twitchUsersData | filter: searchText">
     <ul class="list-unstyled">
       <li ng-repeat="(name, data) in userdata" ng-init="userUrl = 'http://www.twitch.tv/' + name" ng-show="data.stream !== null">
         <img src="{{ data.stream.channel.logo }}" alt="user-logo" height="50" width="50" ng-show="data.stream !== null"/>
         <img src="../images/redcross.png" alt="_blank" height="50" width="50" ng-hide="data.stream !== null" />
-        <a href="{{ userUrl }}" target="_blank">{{ name }}</a>
-        <span ng-show="data.stream !== null">CONECTADO</span>
+        <a href="{{ userUrl }}" target="_blank" class="link-name">{{ name }}</a>
         <br>
-        <span ng-show="data.stream !== null">{{ data.stream.game }}, {{ data.stream.viewers }} viewers</span>
+        <span class="game-details" ng-show="data.stream !== null">{{ data.stream.game }}, {{ data.stream.viewers }} viewers</span>
       </li>
     </ul>
   </li>
