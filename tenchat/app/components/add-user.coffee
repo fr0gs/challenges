@@ -2,8 +2,8 @@
 
 AddUserComponent = Ember.Component.extend
   actions: {
-    printUserConsole: (username) ->
-      console.log(username)
+    sendUserName: (username) ->
+      @sendAction 'enterChat', username
   }
 
 `export default AddUserComponent`
