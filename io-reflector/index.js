@@ -10,6 +10,10 @@ io.on('connection', function(socket) {
 	});
 });
 
+io.on('justarrived', function(data) {
+	console.log(data.msg);
+});
+
 http.listen(3000, function(){
 	  console.log('listening on *:3000');
 });
