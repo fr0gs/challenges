@@ -1,7 +1,18 @@
-{{md-input value=username label='User Name' class="col s12" validate=true}}
+{{#unless isUserDefined}}
 
-{{md-btn icon='mdi-content-send'
-    iconPosition='right'
-    text='Submit'
-    action='sendUserName'
-    actionArg=username}}
+  {{md-input value=username label='User Name' class="col s12" validate=true}}
+  {{md-btn icon='mdi-content-send'
+      iconPosition='right'
+      text='Submit'
+      action='sendUserName'
+      actionArg=username}}
+
+  {{else}}
+    <div class="row">
+
+    </div>
+    <h1>Welcome {{ myUserName }}</h1>
+    <div class="row input-chat">
+      {{textarea value=name cols="80" rows="12"}}
+    </div>
+{{/unless}}
