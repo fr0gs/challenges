@@ -1,5 +1,5 @@
 <ul>
   {{#each message in messages}}
-    <li>{{message}}</li>
+    <li><span>User: {{message.user}}</span><span> said: {{ message.msg }}</span></li>
   {{/each}}
 </ul>

@@ -6,10 +6,13 @@ IndexRoute = Ember.Route.extend
   activate: ->
     s = @get 'iosock'
     s.listenOnBroadCast (data) =>
-      c = @get 'controller.messages'
+      c = @get 'controller'
+      arrayMessages = c.get 'myMessages'
+      arrayMessages = [] if arrayMessages == undefined
+      arrayMessages.push(data);
       c.set(
-        'controller.messages'
-        data
+        'myMessages'
+        arrayMessages
       )
   actions:
     sendChat: (username, message) ->
