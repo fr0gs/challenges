@@ -12,6 +12,11 @@ AddUserComponent = Ember.Component.extend
     sendUserName: (str) ->
       aux = @get 'userService'
       aux.setUser str
-
+    sendChat: (message) ->
+      @sendAction( # Apparently the only way to call multiple argument functions
+        'sendChat'
+        @get 'myUserName'
+        message
+      )
 
 `export default AddUserComponent`

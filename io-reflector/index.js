@@ -8,6 +8,10 @@ io.on('connection', function(socket) {
 	socket.on('justarrived', function(msg) {
 		console.log(msg);	
 	});
+	socket.on('chatMessage', function (data){
+		console.log('(*) User: ' + data.user + ' said ' + data.msg);
+		socket.emit('broadcastMessage', { user: data.user, msg: data.msg })
+	});
 });
 
 //io.on('justarrived', function(data) {

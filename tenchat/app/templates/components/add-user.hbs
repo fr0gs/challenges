@@ -8,11 +8,18 @@
       actionArg=username}}
 
   {{else}}
+    <h3>Welcome {{ myUserName }}</h3>
     <div class="row">
-
+      <div class="col s12">
+        {{#display-chat messages=myMessage username=myUserName}}{{/display-chat}}
+      </div>
     </div>
-    <h1>Welcome {{ myUserName }}</h1>
-    <div class="row input-chat">
-      {{textarea value=name cols="80" rows="12"}}
+    <div class="row">
+      {{textarea value=textchat}}
+      {{md-btn icon='mdi-action-favorite'
+      	action='sendChat'
+        actionArg=textchat
+        buttonType='floating'
+      	class='btn-large'}}
     </div>
 {{/unless}}
