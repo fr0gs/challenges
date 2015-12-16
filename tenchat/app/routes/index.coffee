@@ -9,11 +9,9 @@ IndexRoute = Ember.Route.extend
       c = @get 'controller'
       arrayMessages = c.get 'myMessages'
       arrayMessages = [] if arrayMessages == undefined
-      arrayMessages.push(data);
-      c.set(
-        'myMessages'
-        arrayMessages
-      )
+      arrayMessages.pushObject (Ember.Object.create data)
+      c.set 'myMessages', arrayMessages
+
   actions:
     sendChat: (username, message) ->
       aux = @get 'iosock'

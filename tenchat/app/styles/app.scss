@@ -1,9 +1,14 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
 body {
-   display: flex;
-   min-height: 100vh;
-   flex-direction: column;
- }
-
- main {
-   flex: 1 0 auto;
- }
+    margin: 0 0 100px; /* bottom = footer height */
+}
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+}

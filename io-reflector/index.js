@@ -5,12 +5,9 @@ var io = require('socket.io')(http);
 
 io.on('connection', function(socket) {
 	console.log('[+] new user connected');
-	socket.on('justarrived', function(msg) {
-		console.log(msg);	
-	});
 	socket.on('chatMessage', function (data){
 		console.log('(*) User: ' + data.user + ' said ' + data.msg);
-		socket.emit('broadcastMessage', { user: data.user, msg: data.msg })
+		io.emit('broadcastMessage', { user: data.user, msg: data.msg })
 	});
 });
 
