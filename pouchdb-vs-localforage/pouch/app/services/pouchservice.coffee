@@ -24,7 +24,7 @@ PouchserviceService = Ember.Service.extend
   ###
   createUpdateDoc: (id, title) ->
     (@getDoc id)
-    .then((doc) =>
+    .then((doc) => # Update
       console.log 'Document already exists.'
       (@get 'db').put(
         _id: id
@@ -32,7 +32,7 @@ PouchserviceService = Ember.Service.extend
         title: title
       )
     )
-    .catch((err) =>
+    .catch((err) => # Create
       console.log 'Document does not exist'
       (@get 'db').put(
         _id: id
