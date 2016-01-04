@@ -2,9 +2,6 @@
 `import Benchmark from 'npm:benchmark'`
 
 BenchService = Ember.Service.extend
-  service: undefined
-  benchName: undefined
-  maxTimes: 10
   pouchService: Ember.inject.service 'pouchservice'
   localForageService: Ember.inject.service 'localforageservice'
   benchSuite: new Benchmark.Suite 'Benchmark PouchDB & LocalForage'
@@ -18,44 +15,49 @@ BenchService = Ember.Service.extend
       i++
     text
 
-  asyncLoopOrdered: (times) ->
-    iterations = []
-    i = 0
-    while i < times
-      iterations.push (@testFunction i)
-      i++
-    Promise.all(iterations).then((output) ->
-      output.join('')
-    )
 
-  # testFunction will call the service, perform the operation and return a Promise.
-  testFunction: (n) ->
-    (@get('pouchService').createUpdateDoc((String n), @makeid()))
+  ###~
+  #  Each Benchmark added to the benchmark suite is going to be executed
+  #  a random amount of times (~100/function to test)
+  #
+  ###
+  benchmarkCreate: () ->
+      result = {}
+      Ember.$.getJSON('bigitem.json').then((doc) =>
+        @createUpdateTest 1, result, doc[0] # Takes the JSON only
+      )
 
 
-  benchmarkCreate: (what) ->
-    result = {}
+  ###~
+  # createUpdateFunction creates/updates a document with a new id and a random title.
+  #
+  ###
+  createUpdateTest: (many, res, doc) ->
 
-    (@get 'benchSuite').add(new Benchmark('Create Items Bench',
+    # One test for each different number of items
+    (@get 'benchSuite').add(new Benchmark("Create #{many} Items Bench",
       'defer': true
 
+      # The function to be tested.
       fn: (deferred) =>
         iterations = []
-        times = @get 'maxTimes'
         i = 0
-        while i < times
-          iterations.push (@testFunction i)
+        while i < many
+          # ID is changed in every loop so a new item is always going to be created.
+          doc._id = @makeid()
+          iterations.push (@get('pouchService').createUpdateDoc doc)
           i++
-        Promise.all(iterations).then((output) ->
-          output.join('')
+        Promise.all(iterations).then((response) ->
           deferred.resolve()
         )
-
     ))
     .on('complete', (event) =>
-      @get('pouchService').removeDb()
-      console.log String(event.target)
+      (@get 'pouchService').removeDb()
+      res[many] = event.target.times.elapsed
     )
     .run()
+
+
+
 
 `export default BenchService`
