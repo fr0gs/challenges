@@ -33,10 +33,8 @@ BenchService = Ember.Service.extend
   #
   ###
   benchmarkCreate: () ->
-    result = {}
-
     Ember.$.getJSON('bigitem.json').then((doc) =>
-      @createTest 400, result, doc[0]
+      @createTest 10, doc[0]
     )
 
 
@@ -44,7 +42,7 @@ BenchService = Ember.Service.extend
   # createFunction creates a document with a new id and a random title.
   #
   ###
-  createTest: (many, res, doc) ->
+  createTest: (many, doc) ->
 
     # One test for each different number of items
     (@get 'benchSuite').add(new Benchmark("Create #{many} Items Bench",
@@ -71,9 +69,56 @@ BenchService = Ember.Service.extend
     .on('complete', (event) =>
       console.log String event.target
       console.log 'number: ' + many + ' average creation time: ' + event.target.stats.mean
-      console.log 'Total stats: ' + event.target.stats
       #console.log event.target.stats
-      #(@get 'pouchService').removeDb()
+      (@get 'pouchService').removeDb()
+    )
+    .run { 'async': true }
+
+
+  benchmarkGet: () ->
+    Ember.$.getJSON('bigitem.json').then((doc) =>
+      @getTest 10, doc[0]
+    )
+
+  getTest: (many, doc) ->
+    # One test for each different number of items
+    (@get 'benchSuite').add(new Benchmark("Get #{many} Items Bench",
+      'defer': true
+
+      'minSamples': 50 # From here the benchmark will create a random amount of samples
+
+      # Creates as many objects as needed before reading.
+      # If this test is slower than creating means that this
+      # setup() function is taken into account when measuring the whole
+      # test...
+      setup: =>
+        iterations = []
+        i = 0
+        while i < many
+          docAux = Ember.copy doc
+          Object.assign docAux, { _id: String i } # New id for each new item.
+          iterations.push ((@get 'pouchService').createDoc docAux)
+          i++
+        Promise.all(iterations).then((response) ->
+          response = response.join('')
+        )
+
+      # The function to be tested.
+      fn: (deferred) =>
+        iterations = []
+        i = 0
+        while i < many
+          iterations.push ((@get 'pouchService').getDoc String (i))
+          i++
+        Promise.all(iterations).then((response) ->
+          response = response.join('')
+          deferred.resolve()
+        )
+    )).on('complete', (event) =>
+      console.log String event.target
+      console.log 'Get Test-> Number: ' + many + ' average getting time: ' + event.target.stats.mean
+      #console.log event.target.stats
+      (@get 'pouchService').removeDb()
     )
     .run { 'async': true }
 

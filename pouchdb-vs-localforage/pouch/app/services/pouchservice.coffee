@@ -31,9 +31,9 @@ PouchserviceService = Ember.Service.extend
   ###
   createDoc: (doc) ->
     (@get 'db').put(doc).then((response) ->
-      #console.log response
+      console.log response
     ).catch((err) ->
-      #console.log err
+      console.log err
     )
 
   ###
@@ -47,6 +47,11 @@ PouchserviceService = Ember.Service.extend
       console.log err
     )
 
+  ###
+  # Retrieves a document by it's id.
+  ###
+  getDoc: (id) ->
+    (@get 'db').get id
 
     ###
     # Removes a document

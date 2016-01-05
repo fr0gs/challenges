@@ -8,7 +8,8 @@ PouchRoute = Ember.Route.extend
 
 
   activate: ->
-    (@get 'benchService').benchmarkCreate()
+    #(@get 'benchService').benchmarkCreate()
+    (@get 'benchService').benchmarkGet()
     #(@get 'benchService').dummyTest()
 
 
