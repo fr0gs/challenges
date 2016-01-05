@@ -6,6 +6,7 @@ BenchService = Ember.Service.extend
   localForageService: Ember.inject.service 'localforageservice'
   benchSuite: new Benchmark.Suite 'Benchmark PouchDB & LocalForage'
 
+
   makeid: ->
     text = ''
     possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
@@ -16,46 +17,65 @@ BenchService = Ember.Service.extend
     text
 
 
+  dummyTest: ->
+    (@get 'benchSuite').add(new Benchmark("DUmmy test", () ->
+        console.log 'HEHB'
+      ))
+        .on('complete', (event) ->
+          console.log String event.target
+          )
+        .run()
+
+
   ###~
   #  Each Benchmark added to the benchmark suite is going to be executed
   #  a random amount of times (~100/function to test)
   #
   ###
   benchmarkCreate: () ->
-      result = {}
-      Ember.$.getJSON('bigitem.json').then((doc) =>
-        @createUpdateTest 1, result, doc[0] # Takes the JSON only
-      )
+    result = {}
+
+    Ember.$.getJSON('bigitem.json').then((doc) =>
+      @createTest 400, result, doc[0]
+    )
 
 
   ###~
-  # createUpdateFunction creates/updates a document with a new id and a random title.
+  # createFunction creates a document with a new id and a random title.
   #
   ###
-  createUpdateTest: (many, res, doc) ->
+  createTest: (many, res, doc) ->
 
     # One test for each different number of items
     (@get 'benchSuite').add(new Benchmark("Create #{many} Items Bench",
       'defer': true
+
+      'minSamples': 50 # From here the benchmark will create a random amount of samples
+
 
       # The function to be tested.
       fn: (deferred) =>
         iterations = []
         i = 0
         while i < many
-          # ID is changed in every loop so a new item is always going to be created.
-          doc._id = @makeid()
-          iterations.push (@get('pouchService').createUpdateDoc doc)
+          docAux = Ember.copy doc
+          Object.assign docAux, { _id: @makeid() } # New id for each new item.
+          iterations.push ((@get 'pouchService').createDoc docAux)
           i++
         Promise.all(iterations).then((response) ->
+          response = response.join('')
+          #console.log response
           deferred.resolve()
         )
     ))
     .on('complete', (event) =>
-      (@get 'pouchService').removeDb()
-      res[many] = event.target.times.elapsed
+      console.log String event.target
+      console.log 'number: ' + many + ' average creation time: ' + event.target.stats.mean
+      console.log 'Total stats: ' + event.target.stats
+      #console.log event.target.stats
+      #(@get 'pouchService').removeDb()
     )
-    .run()
+    .run { 'async': true }
 
 
 

@@ -7,6 +7,15 @@ PouchserviceService = Ember.Service.extend
   # Creates or retrieves PouchDB singleton instance
   db: new PouchDB(config.pouchName || 'localpouch')
 
+  makeid: ->
+    text = ''
+    possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    i = 0
+    while i < 5
+      text += possible.charAt(Math.floor(Math.random() * possible.length))
+      i++
+    text
+
   # Removes the actual database
   removeDb: ->
     @get('db').destroy()
@@ -16,24 +25,27 @@ PouchserviceService = Ember.Service.extend
       )
       .catch((err) -> console.log 'Error destroying DB')
 
-  ###~
-  # If document already exists it indicates the revision in order to update it,
-  # otherwise it will create the document.
-  #
-  # Documents are fetched by id.
-  # Returns a promise in both cases, must be handled thereinafter.
+
   ###
-  createUpdateDoc: (doc) ->
-    ((@get 'db').get doc._id)
-      .then((resp) => # Update
-        console.log 'Document already exists'
-        doc._rev = resp._rev
-        (@get 'db').put doc
-      )
-      .catch((err) => # Create
-        console.log 'Document does not exist'
-        (@get 'db').put doc
-      )
+  # Creates a new doc. Will fail if doc already exists.
+  ###
+  createDoc: (doc) ->
+    (@get 'db').put(doc).then((response) ->
+      #console.log response
+    ).catch((err) ->
+      #console.log err
+    )
+
+  ###
+  # Updates a document with a given revision. Assumes document has been
+  # previosly fetched so revision number is available
+  ###
+  updateDoc: (doc, revision) ->
+    (@get 'db').put(doc, doc._id, revision).then((response) ->
+      console.log response
+    ).catch((err) ->
+      console.log err
+    )
 
 
     ###

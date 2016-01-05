@@ -9,7 +9,7 @@ PouchRoute = Ember.Route.extend
 
   activate: ->
     (@get 'benchService').benchmarkCreate()
-    #(@get 'benchService').testFunction()
+    #(@get 'benchService').dummyTest()
 
 
 `export default PouchRoute`

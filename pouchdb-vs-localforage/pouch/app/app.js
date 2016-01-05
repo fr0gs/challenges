@@ -8,7 +8,7 @@ let App;
 
 Ember.MODEL_FACTORY_INJECTIONS = true;
 
-PouchDB.debug.enable('*');
+//PouchDB.debug.enable('*');
 
 App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
