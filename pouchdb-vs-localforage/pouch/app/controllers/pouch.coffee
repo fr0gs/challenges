@@ -1,18 +1,41 @@
 `import Ember from 'ember'`
 
-PouchController = Ember.Controller.extend()
+PouchController = Ember.Controller.extend
 
-  #pouchService: Ember.inject.service 'pouchservice'
+  isLoopCreate: false
+  isLoopGet: false
+  isBulkRead: false
+  buttonClicked: false
 
-  #init: () ->
-    #(@get 'pouchService').createUpdateDoc('2', 'DOCTEST').then((response) =>
-      #console.log 'Response object id: ' + (String response.id)
-    #)
-    #  (@get 'pouchService').removeDoc(response.id).then((response) =>
-    #    console.log "Document #{response.id} successfully removed"
-    #    (@get 'pouchService').removeDb()
-    #  )
-    #)
+  benchService: Ember.inject.service 'bench'
+  benchData: Ember.inject.service 'benchdata'
+
+  loopCreate: undefined
+  loopGet: undefined
+  bulkRead: undefined
+
+  init: ->
+    @_super()
+    (@get 'benchData').pouchLoopCreateData().then((doc) =>
+      @set 'loopCreate', doc
+    )
+    (@get 'benchData').pouchLoopGetData().then((doc) =>
+      @set 'loopGet', doc
+    )
+    (@get 'benchData').pouchBulkReadData().then((doc) =>
+      @set 'bulkRead', doc
+    )
+
+  actions:
+    clickLoopCreate: () ->
+      @set 'buttonClicked', true
+      @set 'isLoopCreate', true
+    clickLoopGet: () ->
+      @set 'buttonClicked', true
+      @set 'isLoopGet', true
+    clickBulkRead: () ->
+      @set 'buttonClicked', true
+      @set 'isBulkRead', true
 
 
 `export default PouchController`

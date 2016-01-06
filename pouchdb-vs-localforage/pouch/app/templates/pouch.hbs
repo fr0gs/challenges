@@ -1,4 +1,21 @@
-<p>
-  <h3>{{ model }}</h3>
-  <h4>So this is rendered</h4>
-</p>
+{{#unless buttonClicked}}
+
+  <button id="click-loop-create" {{action "clickLoopCreate"}}>Loop Create</button>
+  <button id="click-loop-get" {{action "clickLoopGet"}}>Loop Get</button>
+  <button id="click-bulk-read" {{action "clickBulkRead"}}>Bulk Read</button>
+
+{{else}}
+
+  {{#if isLoopCreate}}
+    {{pouch-chart myData=loopCreate}}
+  {{else}}
+    {{#if isLoopGet}}
+      {{pouch-chart myData=loopGet}}
+    {{else}}
+      {{#if isBulkRead}}
+        {{pouch-chart myData=bulkRead}}
+      {{/if}}
+    {{/if}}
+  {{/if}}
+
+{{/unless}}

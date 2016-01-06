@@ -31,9 +31,9 @@ PouchserviceService = Ember.Service.extend
   ###
   createDoc: (doc) ->
     (@get 'db').put(doc).then((response) ->
-      console.log response
+      #console.log response
     ).catch((err) ->
-      console.log err
+      #console.log err
     )
 
   ###
@@ -41,11 +41,7 @@ PouchserviceService = Ember.Service.extend
   # previosly fetched so revision number is available
   ###
   updateDoc: (doc, revision) ->
-    (@get 'db').put(doc, doc._id, revision).then((response) ->
-      console.log response
-    ).catch((err) ->
-      console.log err
-    )
+    (@get 'db').put(doc, doc._id, revision)
 
   ###
   # Retrieves a document by it's id.
@@ -66,5 +62,11 @@ PouchserviceService = Ember.Service.extend
       .catch((err) =>
         console.log 'removeDoc: Problem getting the document'
       )
+
+  getBulkDoc: () ->
+    (@get 'db').allDocs(
+      include_docs: true
+    )
+
 
 `export default PouchserviceService`

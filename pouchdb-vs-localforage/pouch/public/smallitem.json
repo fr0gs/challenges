@@ -1,0 +1,45 @@
+{
+  "_id": "5684e6821f400b9b98c2c389",
+  "index": 0,
+  "guid": "07ca76a5-855c-4c81-a732-dbaa4e722a25",
+  "isActive": false,
+  "balance": "$1,998.02",
+  "picture": "http://placehold.it/32x32",
+  "age": 22,
+  "eyeColor": "green",
+  "name": "Sosa Waters",
+  "gender": "male",
+  "company": "AUSTECH",
+  "email": "sosawaters@austech.com",
+  "phone": "+1 (831) 454-3936",
+  "address": "241 Madison Place, Waukeenah, Vermont, 5633",
+  "about": "Velit nulla nostrud commodo excepteur non nostrud in qui commodo ut. Sunt id dolor commodo nisi do. Elit deserunt commodo reprehenderit ipsum voluptate. Exercitation nostrud mollit proident proident.\r\n",
+  "registered": "2015-06-05T11:14:10 -02:00",
+  "latitude": -85.936925,
+  "longitude": -146.517195,
+  "tags": [
+    "quis",
+    "mollit",
+    "sint",
+    "exercitation",
+    "quis",
+    "eu",
+    "quis"
+  ],
+  "friends": [
+    {
+      "id": 0,
+      "name": "Tracy Coffey"
+    },
+    {
+      "id": 1,
+      "name": "Susana Delacruz"
+    },
+    {
+      "id": 2,
+      "name": "Pat Velasquez"
+    }
+  ],
+  "greeting": "Hello, Sosa Waters! You have 3 unread messages.",
+  "favoriteFruit": "banana"
+}
