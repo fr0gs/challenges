@@ -1,8 +1,9 @@
 <div class="column">
-  <div class="ui card">
+  <div class="ui card {{cardColor}}">
     <a class="image" src={{news.image}} href={{news.link}}></a>
     <div class="content">
-      <div class="header">{{news.headline}}</div>
+      <div class="header">
+        <a href="{{news.link}}">{{news.headline}}</a></div>
       <div class="meta">Upvotes: {{news.rank}}</div>
     </div>
   </div>
