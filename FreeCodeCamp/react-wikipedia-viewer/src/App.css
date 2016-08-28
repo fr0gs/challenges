@@ -1,0 +1,46 @@
+body{
+  font-family:'Arvo';
+  background: #4f3b5b;
+  background: -moz-radial-gradient(center, ellipse cover,  #4f3b5b 0%, #231733 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#4f3b5b), color-stop(100%,#231733));
+  background: -webkit-radial-gradient(center, ellipse cover,  #4f3b5b 0%,#231733 100%);
+  background: -o-radial-gradient(center, ellipse cover,  #4f3b5b 0%,#231733 100%);
+  background: -ms-radial-gradient(center, ellipse cover,  #4f3b5b 0%,#231733 100%);
+  background: radial-gradient(ellipse at center,  #4f3b5b 0%,#231733 100%);
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.centered {
+  position: fixed;
+  top: 45%;
+  left: 45%;
+  width: 150px;
+  height: 50px;
+  margin-top: -(50px / 2);
+  margin-left: -(150px / 2);
+  padding: 10px;
+}
