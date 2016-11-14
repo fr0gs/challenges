@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Demo</title>
+</head>
+<body>
+    <div class="table_and_heading">
+      <table class="my-table">
+        <tr colspan="4" class="row row0">
+          <td colspan="4" class="col col00"></td>
+          <td colspan="4" class="col col01"></td>
+          <td colspan="4" class="col col02"></td>
+        </tr>
+        <tr colspan="4" class="row row1">
+          <td colspan="4" class="col col10"></td>
+          <td colspan="4" class="col col11"></td>
+          <td colspan="4" class="col col12"></td>
+        </tr>
+        <tr colspan="4" class="row row2">
+          <td colspan="4" class="col col20"></td>
+          <td colspan="4" class="col col21"></td>
+          <td colspan="4" class="col col22"></td>
+        </tr>
+      </table>
+      <h2 class="floatme">
+        I don't like styling, so I won't style it :D
+      </h2>
+    </div>
+    <p class="winner"></p>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        var currentPlayer = "X";
+        var winStates = [
+          ["00", "01", "02"],
+          ["10", "11", "12"],
+          ["20", "21", "22"],
+          ["00", "10", "20"],
+          ["01", "11", "21"],
+          ["02", "12", "22"],
+          ["00", "11", "22"],
+          ["02", "11", "20"]
+        ];
+        var game = [[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]];
+
+        var changeState = function() {
+          if (currentPlayer === "X") {
+            currentPlayer = "O";
+          }
+          else {
+            currentPlayer = "X";
+          }
+        }
+
+        var giveState = function() {
+          if (currentPlayer === "X") {
+            return 1;
+          }
+          else {
+            return 0;
+          }
+        };
+
+        var announceWinner = function(realState) {
+          if (realState[0] !== -1 && realState[1] !== -1 && realState[0] === realState[1]) {
+            if (realState[2] !== -1 && realState[1] === realState[2]) {
+              $(".winner").text("Player " + currentPlayer + " Won!");
+            }
+          }
+        };
+
+        var checkGameState = function(element) {
+          var myClass = element.classList[1];
+          var cols = myClass.substr(3);
+          var x = cols[0];
+          var y = cols[1];
+
+          game[parseInt(x)][parseInt(y)] = giveState();
+
+          winStates.forEach(function(row) {
+            var realState = [];
+            row.forEach(function(cell) {
+              posX = parseInt(cell[0]);
+              posY = parseInt(cell[1]);
+              realState.push(game[posX][posY]);
+            });
+            announceWinner(realState);
+          })
+
+          changeState();
+        };
+
+        $("tr.row").each(function () {
+          $("td", this).each(function () {
+            $(this).click(function(event) {
+              event.target.innerHTML = currentPlayer;
+              checkGameState(event.target);
+            })
+          });
+        });
+      });
+    </script>
+</body>
+</html>
